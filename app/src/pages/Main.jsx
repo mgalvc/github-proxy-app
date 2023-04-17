@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Main() {
   const [users, setUsers] = useState([])
   const [next, setNext] = useState('')
-  const [current, setCurrent] = useState(`${process.env.PROXY_URL}/api/users`)
+  const [current, setCurrent] = useState(`${import.meta.env.VITE_PROXY_URL}/api/users`)
   const [history, setHistory] = useState([])
 
   useEffect(() => {

@@ -8,13 +8,13 @@ export default function User({ params }) {
   const [page, setPage] = useState(1)
 
   useEffect(() => {
-    fetch(`${process.env.PROXY_URL}/api/users/${username}/details`)
+    fetch(`${import.meta.env.VITE_PROXY_URL}/api/users/${username}/details`)
       .then(res => res.json())
       .then(setDetails)
   }, [])
 
   useEffect(() => {
-    fetch(`${process.env.PROXY_URL}/api/users/${username}/repos?page=${page}`)
+    fetch(`${import.meta.env.VITE_PROXY_URL}/api/users/${username}/repos?page=${page}`)
       .then(res => res.json())
       .then(setRepos)
   }, [page])
